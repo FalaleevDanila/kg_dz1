@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="RU">
+<head>
+<title>ДЗ 1.1</title>
+</head>
+<body>
+
+<canvas id="dz01" width="500" height="500"></canvas>
+<script type="text/javascript">
+	let globalX = 0;
+	let canvas = document.getElementById('dz01');
+	let ctx = canvas.getContext('2d');
+
+	function first() {
+		
+		ctx.clearRect(0, 0, canvas.width, canvas.height);
+		globalX += 10;
+
+		
+		ctx.fillRect(500 - globalX, 10, 30, 30);
+		ctx.fillRect(300 + globalX, 200, 30, 30);
+		ctx.fillRect(300 , 200 - globalX, 30, 30);
+		ctx.fillRect(500 , 10 + globalX, 30, 30);
+		
+		globalX += 10;
+
+	
+	}
+	
+	setInterval(first, 50)
+	
+	
+	setTimeout(() => {
+		window.location.reload(false);
+	}, 500);
+</script>
+
+</body>
+</html>

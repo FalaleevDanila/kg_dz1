@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="RU">
+<head>
+<title>ДЗ 1</title>
+</head>
+<body>
+
+<canvas id="dz01" width="1000" height="300"></canvas>
+<script type="text/javascript">
+	let globalX = 0;
+	let globalY = 0;
+	let canvas = document.getElementById('dz01');
+	let ctx = canvas.getContext('2d');
+
+	function callback() {
+		
+		ctx.clearRect(0, 0, canvas.width, canvas.height);
+		globalX += 1;
+
+		for (var i = 0; i < 100; i++) {
+			ctx.fillRect(10 + globalX, 100 + i, 1, 1);
+			ctx.fillRect(110 + globalX, 100 + i, 1, 1);
+			
+			ctx.fillRect(20 + globalX, 110 + i, 1, 1);
+			ctx.fillRect(120 + globalX, 110 + i, 1, 1);
+			
+			ctx.fillRect(140 + globalX + i, 200 - i, 1, 1);
+			ctx.fillRect(150 + globalX + i, 210 - i, 1, 1);
+		}
+		
+		for (var i = 0; i < 100; i++) {
+			ctx.fillRect(10 + globalX + i, 200 - i, 1, 1);
+			ctx.fillRect(20 + globalX + i, 210 - i, 1, 1);
+			
+			
+		}
+		
+		for (var i = 0; i < 50; i++) {
+			ctx.fillRect(190 + globalX - i, 150 - i, 1, 1);
+			ctx.fillRect(200 + globalX - i, 160 - i, 1, 1);
+		}
+		
+		for (var i = 0; i < 10; i++) {
+			ctx.fillRect(110 + globalX + i, 200 + i, 1, 1);
+			ctx.fillRect(10 + globalX + i, 200 + i, 1, 1);
+			
+			ctx.fillRect(240 + globalX + i, 100 + i, 1, 1);
+			ctx.fillRect(140 + globalX + i, 200 + i, 1, 1);
+			
+			ctx.fillRect(140 + globalX + i, 200 + i, 1, 1);
+			
+			ctx.fillRect(110 + globalX + i, 100 + i, 1, 1);
+			ctx.fillRect(10 + globalX + i, 100 + i, 1, 1);
+		}
+
+		globalX += 1;
+
+	
+	}
+	setInterval(callback, 50)
+
+	setTimeout(() => {
+		window.location.reload(false);
+	}, 5000);
+</script>
+
+</body>
+</html>
